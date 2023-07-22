@@ -8,6 +8,7 @@ import {
 import Main from './Component/Main';
 import Home from './Component/Home/Home';
 import App from './App';
+import College from './Component/College/College';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
+      },
+      {
+        path:'/college',
+        element:<College></College>,
       }
     ]
   },

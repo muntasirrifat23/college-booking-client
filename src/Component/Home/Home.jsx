@@ -9,7 +9,20 @@ import college4 from '../../../public/College/c4.jpeg'
 import college5 from '../../../public/College/c5.jpeg'
 import college6 from '../../../public/College/c6.jpeg'
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
+
 const Home = () => {
+    const[popular, setPopular] = useState();
+    useEffect(()=>{
+        fetch('/college.json')
+        .then(res=>res.json())
+        .then(data=>{
+            const populars = data.filter(item=>
+                item.category==='popular');
+                setPopular(populars);
+
+        })
+    },[])
     return (
         <div>
             <Helmet>
@@ -89,20 +102,47 @@ const Home = () => {
             {/* Popular Home */}
             <div className="text-center mt-12">
             <h1 className="font-bold text-4xl">Popular College</h1>
+
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex justify-center mb-20 items-center mt-8'>
+                {popular && popular.length > 0 ? (
+                    popular.map(data => (
+                        <>
+                            <div className="flex justify-center  ">
+                                <div className="card w-96 shadow-xl text-black bg-lime-100">
+                                    <figure className="px-10 pt-10">
+                                        <img src={data.image} alt="Shoes" className="rounded-xl" />
+                                    </figure>
+                                    <div className="card-body font-semibold">
+                                        <h2 className="card-title font-bold text-2xl">Name: {data.name}</h2>
+                                        <p>Rating: {data.rating}</p>
+                                        <p>Admission Date: {data.admission}</p>
+                                        <div className="card-actions">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+
+                    ))
+                ) : (
+                    <p>No popular instructors found.</p>
+                )}
+            </div>
+
             </div>
 
 
             {/* Bottom Home */}
             <div className="mt-12 rounded-xl">
-                <div className="hero min-h-screen imgCng" style={{height:'115px'}}>
-  <div className="hero-overlay bg-opacity-60"></div>
-  <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold text-white">Book Now</h1>
-      <h3 className="text-white font-semibold">BD College Booking is Helping you to find top and best colleges and autonomous Colleges in Bangladesh</h3> 
-    </div>
-  </div>
-</div>
+                <div className="hero min-h-screen imgCng" style={{ height: '115px' }}>
+                    <div className="hero-overlay bg-opacity-60"></div>
+                    <div className="hero-content text-center text-neutral-content">
+                        <div className="max-w-md">
+                            <h1 className="mb-5 text-5xl font-bold text-white">Book Now</h1>
+                            <h3 className="text-white font-semibold">BD College Booking is Helping you to find top and best colleges and autonomous Colleges in Bangladesh</h3>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
