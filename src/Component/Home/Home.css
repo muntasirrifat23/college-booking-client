@@ -1,0 +1,23 @@
+.carousel-item {
+    position: relative;
+  }
+ .imgCng{
+    background-image: url('../../../public/College/edu.jpeg');
+ }
+  
+  .carousel-text {
+    position: absolute;
+    bottom: 36px;
+    left: 10px;
+    color:white;
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    margin-bottom: 23px;
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+  } 
