@@ -45,11 +45,11 @@ const College = () => {
 
 
                                         <p>Admission Date: {data.admission}</p>
-                                        <p>Research: {data.topic}</p>
+                                        <p>Research Subject: {data.topic}</p>
                                         <div className="card-actions">
                                             {/* <Link to={`/college/${_id}`}> */}
                                             <Link to={`/college/details`}>
-                                                <button className="btn btn-primary bg-green-800">View Details</button>
+                                                <button className="btn btn-primary bg-green-800 text-white">View Details</button>
                                             </Link>
                                         </div>
                                     </div>

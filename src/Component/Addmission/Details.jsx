@@ -1,51 +1,70 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
+import { Link,  } from "react-router-dom";
 
 const Details = () => {
-    const details = useLoaderData();
-    console.log(details);
+    const [college, setCollege] = useState();
+    useEffect(() => {
+        fetch('/college.json')
+            .then(res => res.json())
+            .then(data => { setCollege(data) })
+    }, [])
+//     const details = useLoaderData();
+//     console.log(details);
     return (
-        <div>
-             <div className="flex justify-center mb-8 mt-8">
-            {details.map(({ _id, name, image, price, rating, des }) => (
-                <div key={_id}
-                    className='flex justify-center'>
-                    <div className="card card-compact w-3/4 bg-base-100 shadow-xl flex justify-center">
-                        <figure><img src={image} alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title text-2xl font-bold text-green-800">{name}</h2>
-                            <div className='flex'>
-                                <p className='text-green-800 font-semibold text-lg'>Price: ${price}</p>
-                                <h6 className='align-items-center text-red-900'>{rating}
-                                    
-                                    {/* <Rating placeholderRating={rating}
-                                        readonly
-                                        emptySymbol={<FaRegStar />}
-                                        placeholderSymbol={<FaStar />}
-                                        fullSymbol={<FaStar />}>
-                                    </Rating> */}
-                                </h6>
+        <div className="mt-32">
+              <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 flex justify-center mb-20 items-center mt-8'>
+                {college && college.length > 0 ? (
+                    college.map(data => (
+                        <>
+                            <div className="flex justify-center m-3">
+                                <div className="card shadow-xl text-black bg-lime-100">
+                                    <figure className="px-10 pt-10">
+                                        <img src={data.image} alt="Shoes" className="rounded-xl" />
+                                    </figure>
+                                    <div className="card-body font-semibold">
+                                        <h2 className="card-title font-bold text-2xl">Name: {data.name}</h2>
+
+                                        {/* rating */}
+                                        <div className="flex ">
+                                            <div> <span className="font-bold">Rating :</span> {data.rating}</div>
+                                            <Rating className="text-red-800 ml-2" placeholderRating={data.rating}
+                                                readonly
+                                                emptySymbol={<FaRegStar />}
+                                                placeholderSymbol={<FaStar />}
+                                                fullSymbol={<FaStar />}>
+                                            </Rating>
+                                        </div>
+
+                                        <p> <span className="font-bold">Admission Date:</span> {data.admission}</p>
+
+                                        <p> <span className="font-bold">Research Subject:</span> {data.topic}</p>
+
+                                        <p><span className="font-bold">Research Works:</span> {data.research}</p>
+
+                                        <p><span className="font-bold"> Sports:</span> {data.sports}</p>
+
+                                        <div className="card-actions w-full justify-center mt-4">
+                                            {/* <Link to={`/college/${_id}`}> */}
+                                            <Link to={`/college`} className="w-2/3 text-center">
+                                                <p className=" bg-red-800 text-white p-3 rounded-xl">
+                                                    Go Back
+                                                </p>
+                                                {/* <button className="btn btn-primary bg-red-800 text-white"> Go BAck</button> */}
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 className="font-semibold">{des}</h2>
+                        </>
 
+                    ))
+                ) : (
+                    <p>No popular college.</p>
+                )}
+            </div>
 
-                            <div className="card-actions">
-                                {/* <Link to='/mytoy'> */}
-                                    <button className="btn btn-primary bg-green-800">Buy Now</button>
-                                {/* </Link> */}
-
-                            </div>
-                            <Link to='/college'>
-                            <button className="btn btn-primary bg-green-400 text-black w-full"><span className="ml-2"> Go Back</span></button>
-                            {/* <button className="btn btn-primary bg-green-400 text-black w-full"><FaArrowLeft/><span className="ml-2"> Go Back</span></button> */}
-                                </Link>
-                        </div>
-                    </div>
-                </div>
-                  ))}
-
-
-
-                  </div>
         </div>
     );
 };
