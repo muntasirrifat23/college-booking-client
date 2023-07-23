@@ -1,5 +1,6 @@
 [
     {
+        "_id": "1",
         "image": "/public/College/c1.jpeg",
         "name": "Milestone College",
         "rating": "4.5",
@@ -12,6 +13,7 @@
         "topic":"Chemistry"
     },
     {
+        "_id": "2",
         "image": "/public/College/c2.jpeg",
         "name": "Rajuk Uttara Model College",
         "rating": "4.0",
@@ -24,6 +26,7 @@
         "topic":"Physics"
     },
     {
+        "_id": "3",
         "image": "/public/College/c3.jpeg",
         "name": "Uttara High School & College",
         "rating": "4.3",
@@ -35,6 +38,7 @@
         "topic":"Math"
     },
     {
+        "_id": "4",
         "image": "/public/College/c4.jpeg",
         "name": "Nawab Habibullah College",
         "rating": "4.8",
@@ -46,6 +50,7 @@
         "topic":"English"
     },
     {
+        "_id": "5",
         "image": "/public/College/c5.jpeg",
         "name": "Notre Dame College",
         "rating": "4.0",
@@ -58,6 +63,7 @@
         "topic":"Bangla"
     },
     {
+        "_id": "6",
         "image": "/public/College/c6.jpeg",
         "name": "Shaheed Ramij Udiin College",
         "rating": "4.1",

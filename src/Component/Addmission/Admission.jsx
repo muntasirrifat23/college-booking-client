@@ -109,7 +109,7 @@ const Admission = () => {
 
 
                     <div className="form-control mt-6 text-center">
-                    <button className="btn btn-error text-white font-semibold text-xl lg:w-1/4 sm:w-2/3  mx-auto">Success</button>
+                    <button className="btn btn-error text-white font-semibold text-xl lg:w-1/4 sm:w-2/3  mx-auto">Submit</button>
                     </div>
                 </div>
             </form>

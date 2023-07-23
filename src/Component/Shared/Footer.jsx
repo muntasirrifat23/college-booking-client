@@ -2,7 +2,7 @@ import logo from '../../../public/logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded mt-5">
+            <footer className="footer footer-center p-10 bg-base-200 text-base-content">
   <div className="grid grid-flow-col gap-4">
     
     <img  src={logo} alt="logo" style={{ width: '50px', height:'50px', marginRight: '10px',borderRadius: '20%'}} />
