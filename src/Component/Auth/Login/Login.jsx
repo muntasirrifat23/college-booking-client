@@ -1,10 +1,10 @@
-import  { useContext, useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContest } from '../Auth';
 
 const Login = () => {
     const { signIn } = useContext(AuthContest);
-    const {googleSignIn} =useContext(AuthContest);
+    const { googleSignIn } = useContext(AuthContest);
 
     const formRef = useRef(null);
     const [error, setError] = useState('');
@@ -41,14 +41,14 @@ const Login = () => {
         }
     };
     // Google
-    const handleGoogle=()=>{
+    const handleGoogle = () => {
         googleSignIn()
-        .then(res=>{
-            console.log(res.user);
-        })
-        .catch(err=>{
-            console.log(err.message);
-        });
+            .then(res => {
+                console.log(res.user);
+            })
+            .catch(err => {
+                console.log(err.message);
+            });
     };
 
 
@@ -80,14 +80,14 @@ const Login = () => {
                                     </div>
                                 </label>
                             </div>
-                            
+
 
                             {/* Button */}
                             <div className="form-control mt-6">
                                 <div className="flex flex-col w-full border-opacity-50">
                                     <div className="divider">OR</div>
-                                    <div className=' text-center'>
-                                        <button onClick={handleGoogle} className="btn btn-circle mb-2 bg-orange-600 text-white font-bold text-2xl"> G </button>
+                                    <div className='text-center'>
+                                        <button onClick={handleGoogle} className="btn btn-circle mb-2 bg-orange-600 text-white font-bold text-2xl btn-neutral"> G </button>
                                     </div>
                                 </div>
 
