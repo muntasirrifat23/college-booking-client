@@ -10,12 +10,12 @@ import Home from './Component/Home/Home';
 import App from './App';
 import College from './Component/College/College';
 import Admission from './Component/Addmission/Admission';
-// import Login from './Component/Auth/Login/Login';
+import Login from './Component/Auth/Login/Login';
 import Register from './Component/Auth/Register/Register';
 import MyCollege from './Component/MyCollege/MyCollege';
 import NotFound from './Component/NotFound/NotFound';
 import Details from './Component/Addmission/Details';
-// import Auth from './Component/Auth/Auth';
+import Auth from './Component/Auth/Auth';
 
 const router = createBrowserRouter([
   {
@@ -39,10 +39,10 @@ const router = createBrowserRouter([
         element:<Details></Details>,
         loader:({params})=> fetch(`../college.json/${params._id}`),
       },
-      // {
-      //   path:'/login',
-      //   element:<Login></Login>,
-      // },
+      {
+        path:'/login',
+        element:<Login></Login>,
+      },
       {
         path:'/register',
         element:<Register></Register>,
@@ -66,10 +66,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <Auth> */}
+    <Auth>
     <RouterProvider router={router} />
 
-    {/* </Auth> */}
+    </Auth>
 
   </React.StrictMode>,
 )

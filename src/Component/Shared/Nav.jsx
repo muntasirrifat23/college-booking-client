@@ -1,19 +1,21 @@
 import { Link } from 'react-router-dom';
 import logo from '../../../public/logo.png'
+import { useContext } from 'react';
+import { AuthContest } from '../Auth/Auth';
 
 
 const Nav = () => {
 
-    // const { user, logOut } = useContext(AuthContest);
-    // const handlelogOut = () => {
-    //     logOut()
-    //         .then(result =>
-    //             console.log(result)
-    //         )
-    //         .catch(error =>
-    //             console.log(error.message)
-    //         )
-    // }
+    const { user, logOut } = useContext(AuthContest);
+    const handlelogOut = () => {
+        logOut()
+            .then(result =>
+                console.log(result)
+            )
+            .catch(error =>
+                console.log(error.message)
+            )
+    }
 
     // const navOption = <>
     //     {user ? <>
@@ -71,7 +73,7 @@ const Nav = () => {
                 </div>
 
                 {/* to do */}
-                {/* <div className="navbar-end">
+                <div className="navbar-end">
                     {
                         user ?
                             (<button onClick={handlelogOut} className='bg-black p-3 rounded-xl font-semibold border border-indigo-600'> <div className='flex justify-center items-center'>
@@ -83,7 +85,7 @@ const Nav = () => {
                             </button>) :
                             (<Link to='/login' className='bg-white p-3 rounded-xl font-semibold border border-indigo-600 text-red-600'>Login</Link>)
                     }
-                </div> */}
+                </div>
 
 
             </div>

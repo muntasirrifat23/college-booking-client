@@ -17,6 +17,9 @@ const Admission = () => {
         const image = form.image.value;
         const submit = { college, name, subject, date, email, phone, address, image }
 
+        formReset.current.reset();
+        // const 
+
         console.log(submit)
 
     }
