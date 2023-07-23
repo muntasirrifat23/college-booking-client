@@ -16,6 +16,7 @@ import MyCollege from './Component/MyCollege/MyCollege';
 import NotFound from './Component/NotFound/NotFound';
 import Details from './Component/Addmission/Details';
 import Auth from './Component/Auth/Auth';
+import Private from './Component/Auth/Private';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/college/:id',
-        element:<Details></Details>,
+        element:<Private><Details></Details></Private> ,
         loader:({params})=> fetch(`../college.json/${params._id}`),
       },
       {
