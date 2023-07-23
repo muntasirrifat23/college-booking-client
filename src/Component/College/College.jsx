@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Rating from "react-rating";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const College = () => {
@@ -11,6 +11,7 @@ const College = () => {
             .then(res => res.json())
             .then(data => { setCollege(data) })
     }, [])
+    const _id = useLoaderData();
 
     return (
         <div>
@@ -33,22 +34,23 @@ const College = () => {
 
                                         {/* rating */}
                                         <div className="flex ">
-                                            <div>Rating: {data.rating}</div>
+                                            <div><span className="font-bold">Rating :</span> {data.rating}</div>
                                             <Rating className="text-red-800 ml-2" placeholderRating={data.rating}
                                                 readonly
                                                 emptySymbol={<FaRegStar />}
                                                 placeholderSymbol={<FaStar />}
                                                 fullSymbol={<FaStar />}>
                                             </Rating>
-
                                         </div>
+                                    
+                                        <p> <span className="font-bold">Admission Date:</span> {data.admission}</p>
 
+                                       <p> <span className="font-bold">Research Subject:</span> {data.topic}</p>
 
-                                        <p>Admission Date: {data.admission}</p>
-                                        <p>Research Subject: {data.topic}</p>
+                                       {/* button */}
                                         <div className="card-actions">
-                                            {/* <Link to={`/college/${_id}`}> */}
-                                            <Link to={`/college/details`}>
+                                        <Link to={`/college/${_id}`}>
+                                            {/* <Link to={`/college/details`}> */}
                                                 <button className="btn btn-primary bg-green-800 text-white">View Details</button>
                                             </Link>
                                         </div>

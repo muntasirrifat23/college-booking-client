@@ -39,6 +39,10 @@ const Details = () => {
 
                                         <p> <span className="font-bold">Admission Date:</span> {data.admission}</p>
 
+                                        <p> <span className="font-bold">Form Fees:</span> ${data.price}</p>
+
+                                        <p> <span className="font-bold">Must Carry:</span> {data.procedure}</p>
+
                                         <p> <span className="font-bold">Research Subject:</span> {data.topic}</p>
 
                                         <p><span className="font-bold">Research Works:</span> {data.research}</p>
