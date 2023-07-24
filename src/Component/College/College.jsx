@@ -14,7 +14,7 @@ const College = () => {
     const _id = useLoaderData();
 
     return (
-        <div>
+        <div className="mt-32 bg-white text-black">
             <Helmet>
                 <title>College | All College</title>
             </Helmet>

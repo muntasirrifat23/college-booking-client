@@ -25,7 +25,7 @@ const Admission = () => {
     }
 
     return (
-        <div className="mt-32">
+        <div className="mt-32 bg-white text-black">
             <Helmet>
                 <title>College | Admission</title>
             </Helmet>

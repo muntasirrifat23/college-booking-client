@@ -1,6 +1,7 @@
 import  { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContest } from '../Auth';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const { createUser } = useContext(AuthContest);
@@ -37,6 +38,10 @@ const Register = () => {
 
 
     return (
+        <div className="mt-32 bg-white text-black">
+        <Helmet>
+        <title>College | Registration</title>
+    </Helmet>
         <form onSubmit={handleRegisterPage} ref={formRef} className='mt-20'>
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -96,6 +101,7 @@ const Register = () => {
             </div>
         </div>
         </form>
+        </div>
        
     );
 };

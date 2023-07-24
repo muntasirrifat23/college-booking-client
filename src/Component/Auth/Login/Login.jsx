@@ -1,6 +1,7 @@
 import { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContest } from '../Auth';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const { signIn } = useContext(AuthContest);
@@ -53,6 +54,10 @@ const Login = () => {
 
 
     return (
+        <div className="mt-32 bg-white text-black">
+              <Helmet>
+                <title>College | Login</title>
+            </Helmet>
         <form onSubmit={handleLogin} ref={formRef} className='mt-12'>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
@@ -100,6 +105,7 @@ const Login = () => {
             </div>
 
         </form>
+        </div>
 
     );
 };

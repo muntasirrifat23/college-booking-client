@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
 import { Link,  } from "react-router-dom";
@@ -13,7 +14,10 @@ const Details = () => {
 //     const details = useLoaderData();
 //     console.log(details);
     return (
-        <div className="mt-32">
+        <div className="mt-32 bg-white text-black">
+              <Helmet>
+                <title>College | Details</title>
+            </Helmet>
               <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 flex justify-center mb-20 items-center mt-8'>
                 {college && college.length > 0 ? (
                     college.map(data => (

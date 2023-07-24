@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/college/:id',
-        element:<Private><Details></Details></Private> ,
+        element:<Private><Details></Details>  </Private> ,
         loader:({params})=> fetch(`../college.json/${params._id}`),
       },
       {

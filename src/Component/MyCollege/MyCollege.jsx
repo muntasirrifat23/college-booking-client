@@ -2,8 +2,8 @@ import { Helmet } from "react-helmet";
 
 const MyCollege = () => {
     return (
-        <div className="mt-32">
-              <Helmet>
+      <div className="mt-32 bg-white text-black">
+      <Helmet>
                 <title>College | My College</title>
             </Helmet>
 
