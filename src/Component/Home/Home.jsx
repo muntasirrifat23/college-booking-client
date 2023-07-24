@@ -24,13 +24,13 @@ const Home = () => {
         })
     },[])
     return (
-        <div>
+        <div className="mt-32 text-black bg-white">
             <Helmet>
                 <title>College | Home</title>
             </Helmet>
 
             <div className="text-center">
-                <Carousel>
+                <Carousel className="bg-white">
                     <div className="carousel-item">
                         <img src={college1} />
                         <div >

@@ -35,8 +35,6 @@ const Register = () => {
         })
 }
 
-
-
     return (
         <div className="mt-32 bg-white text-black">
         <Helmet>
@@ -52,32 +50,33 @@ const Register = () => {
                         {/* Name */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-semibold text-lg mt-4">Name:</span>
+                                <span className="label-text font-semibold text-lg mt-4 text-black">Name:</span>
                             </label>
-                            <input type="text" name='name' placeholder="Enter your name" className="input input-bordered" required />
+                            <input type="text" name='name' placeholder="Enter your name" className="input input-bordered bg-white text-black" required />
                         </div>
+
                         {/* email */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-semibold text-lg">Email:</span>
+                                <span className="label-text font-semibold text-lg text-black">Email:</span>
                             </label>
-                            <input type="email" name='email' placeholder="Enter your email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="Enter your email" className="input input-bordered bg-white text-black" required />
                         </div>
                         
                         {/* pass */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-semibold text-lg">Password</span>
+                                <span className="label-text font-semibold text-lg text-black">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="Your password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="Your password" className="input input-bordered bg-white text-black" required />
 
 
                             {/* url */}
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text font-semibold text-lg">Photo URL</span>
+                                    <span className="label-text font-semibold text-lg text-black">Photo URL</span>
                                 </label>
-                                <input type="file" name='file' className="file-input file-input-bordered w-full max-w-xs" required />
+                                <input type="file" name='file' className="file-input file-input-bordered w-full max-w-xs bg-white text-black" required />
 
                             </div>
 

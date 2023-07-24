@@ -46,7 +46,7 @@ const Nav = () => {
         <Link className='ml-3 mt-2' to='/register'>Registration</Link></>
 
     return (
-        <div>
+        <div className="bg-white">
 
             <div className="navbar bg-base-100 p-5 fixed mb-15 z-10 w-full bg-opacity-40 bg-black text-white top-0">
                 <div className="navbar-start">

@@ -67,18 +67,19 @@ const Login = () => {
                         <div className="card-body">
                             <h1 className="text-5xl font-bold text-cyan-800">Login now!</h1>
 
-                            <div className="form-control">
+                            <div className="form-control text-black">
                                 <label className="label">
-                                    <span className="label-text font-semibold text-xl">Email :</span>
+                                    <span className="label-text font-semibold text-xl text-black">Email :</span>
                                 </label>
-                                <input type="email" name='email' placeholder="Enter your email" className="input input-bordered" required />
+                                <input type="email" name='email' placeholder="Enter your email" className="input input-bordered bg-white text-black" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text font-semibold text-xl">Password:</span>
+                                    <span className="label-text font-semibold text-xl text-black">Password:</span>
                                 </label>
-                                <input type="password" name='password' placeholder="Your password" className="input input-bordered" required />
+                                <input type="password" name='password' placeholder="Your password" className="input input-bordered bg-white text-black" required />
+
                                 <label className="label">
                                     <div>
                                         <Link to="/register" className='text-indigo-800 font-semibold'>Have Not Account? Please Register</Link>
