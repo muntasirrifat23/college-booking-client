@@ -7,7 +7,7 @@ import { FaRegStar, FaStar } from 'react-icons/fa';
 const College = () => {
     const [college, setCollege] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/college')
+        fetch('https://college-server-seven.vercel.app/college')
             .then(res => res.json())
             .then(data => { setCollege(data) })
     }, [])

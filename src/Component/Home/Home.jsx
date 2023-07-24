@@ -16,7 +16,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 const Home = () => {
     const [popular, setPopular] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/college')
+        fetch('https://college-server-seven.vercel.app/college')
             .then(res => res.json())
             .then(data => {
                 const populars = data.filter(item =>
@@ -28,14 +28,14 @@ const Home = () => {
 
     const [gpa, setGpa] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/gpa')
+        fetch('https://college-server-seven.vercel.app/gpa')
             .then(res => res.json())
             .then(dta => { setGpa(dta) })
     }, [])
 
     const [subject, setSubject] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/subject')
+        fetch('https://college-server-seven.vercel.app/subject')
             .then(res => res.json())
             .then(dta => { setSubject(dta) })
     }, [])
