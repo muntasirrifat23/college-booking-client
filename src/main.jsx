@@ -53,12 +53,15 @@ const router = createBrowserRouter([
         path:'/my',
         element:<MyCollege></MyCollege>,
       },
-      {
-        path:'*',
-        element:<NotFound></NotFound>,
-      }
+     
     ]
   },
+  
+    {
+      path:'*',
+      element:<NotFound></NotFound>,
+    }
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

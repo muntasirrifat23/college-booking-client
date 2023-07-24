@@ -33,6 +33,13 @@ const Home = () => {
             .then(dta => { setGpa(dta) })
     }, [])
 
+    const [subject, setSubject] = useState();
+    useEffect(() => {
+        fetch('http://localhost:5000/subject')
+            .then(res => res.json())
+            .then(dta => { setSubject(dta) })
+    }, [])
+
 
     return (
         <div className="mt-32 text-black bg-white">
@@ -106,21 +113,46 @@ const Home = () => {
 
             {/*........ My College Booking .................. */}
             <div className="text-center mt-20">
-                <h1 className="font-bold text-4xl">BD College Booking</h1>
-                <h3 className="font-semibold mt-5 px-5 lg:mx-40">Welcome to our <span className="font-bold">BD College Booking</span> Hub! We are here to make your college dreams a reality. Whether you are interested in Science, Arts, or Business Studies, we have got you covered. We have partnerships with numerous colleges across various disciplines, offering you a wide array of options to choose from. Many of our partner colleges boast modern facilities and cutting-edge technology, ensuring an enriching learning environment. We understand the importance of financial considerations. Our platform also features colleges with affordable tuition fees.</h3>
+                <h1 className="font-bold text-4xl ">BD College Booking</h1>
+                <h3 className="font-semibold mt-5 px-5 lg:mx-40">Welcome to our <span className="font-bold ">BD College Booking</span> Hub! We are here to make your college dreams a reality. Whether you are interested in Science, Arts, or Business Studies, we have got you covered. We have partnerships with numerous colleges across various disciplines, offering you a wide array of options to choose from. Many of our partner colleges boast modern facilities and cutting-edge technology, ensuring an enriching learning environment. We understand the importance of financial considerations. Our platform also features colleges with affordable tuition fees.</h3>
+            </div>
+
+            {/* Subjects */}
+            <div>
+            <h1 className="font-bold text-4xl text-center mt-12 text-red-900 italic">Subjects</h1>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex justify-center mb-20 items-center mt-8'>
+                {subject && subject.length > 0 ? (
+                    subject.map(data => (
+                        <>
+                            <div className="flex justify-center ">
+                                <div className="card shadow-xl text-black bg-rose-100">
+                                    <figure className="px-10 pt-10">
+                                        <img src={data.image} alt="Shoes" className="rounded-xl" />
+                                    </figure>
+                                    <div className="card-body font-semibold text-center" >
+                                        <h2 className="card-title font-bold text-2xl text-center">Subject: {data.name}</h2> 
+                                    </div>
+                                </div>
+                            </div>
+                        </>
+
+                    ))
+                ) : (
+                    <p>No popular college.</p>
+                )}
+            </div>
             </div>
 
             {/* Popular Home */}
             <div className="text-center mt-12">
-                <h1 className="font-bold text-4xl">Popular College</h1>
-
+                <h1 className="font-bold text-4xl text-red-900 italic">Popular College</h1>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex justify-center mb-20 items-center mt-8'>
                     {popular && popular.length > 0 ? (
                         popular.map(data => (
                             <>
                                 <div className="flex justify-center  ">
                                     <div className="card w-96 shadow-xl text-black bg-lime-100">
-                                        <figure className="px-10 pt-10" style={{ width: '300px', height: '200px' }}>
+                                        <figure className="px-10 pt-10" style={{ width: '400px', height: '200px' }}>
                                             <img src={data.image} alt="Shoes" className="rounded-xl" style={{ width: '100%', height: '100%' }} />
                                         </figure>
 
@@ -151,7 +183,7 @@ const Home = () => {
 
             {/* Student of GPA 5 */}
             <div className="text-center mt-12">
-                <h1 className="font-bold text-4xl">Students of GPA 5</h1>
+                <h1 className="font-bold text-4xl text-red-900 italic">Students of GPA 5</h1>
 
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 flex justify-center mb-20 items-center mt-8 lg:ml-4 m-6'>
                     {gpa && gpa.length > 0 ? (

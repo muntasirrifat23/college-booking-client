@@ -18,7 +18,7 @@ const College = () => {
             <Helmet>
                 <title>College | All College</title>
             </Helmet>
-            <h1 className="text-center mt-32 text-4xl font-bold">All Colleges</h1>
+            <h1 className="text-center mt-32 text-4xl font-bold text-red-900 italic">All Colleges</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex justify-center mb-20 items-center mt-8'>
                 {college && college.length > 0 ? (
