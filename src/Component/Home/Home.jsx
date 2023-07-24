@@ -152,7 +152,7 @@ const Home = () => {
                             <>
                                 <div className="flex justify-center  ">
                                     <div className="card w-96 shadow-xl text-black bg-lime-100">
-                                        <figure className="px-10 pt-10" style={{ width: '400px', height: '200px' }}>
+                                        <figure className="px-10 pt-10" style={{ width: '300px', height: '200px' }}>
                                             <img src={data.image} alt="Shoes" className="rounded-xl" style={{ width: '100%', height: '100%' }} />
                                         </figure>
 
@@ -185,7 +185,7 @@ const Home = () => {
             <div className="text-center mt-12">
                 <h1 className="font-bold text-4xl text-red-900 italic">Students of GPA 5</h1>
 
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 flex justify-center mb-20 items-center mt-8 lg:ml-4 m-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 flex justify-center mb-20 items-center mt-8 lg:ml-4 m-6'>
                     {gpa && gpa.length > 0 ? (
                         gpa.map(success => (
                             <>

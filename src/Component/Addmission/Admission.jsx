@@ -43,7 +43,7 @@ const Admission = () => {
                             <div className="label w-full text-xl">
                                 College Name:
                             </div>
-                            <input type="text" name="college" placeholder="Enter College Name" className="input input-bordered" style={{ width: '100%' }} required />
+                            <input type="text" name="college" placeholder="Enter College Name" className="input input-bordered bg-white text-black" style={{ width: '100%' }} required />
                         </div>
 
                         {/* Your Name  */}
@@ -51,7 +51,7 @@ const Admission = () => {
                             <div className="label w-full text-xl">
                                 Your Name:
                             </div>
-                            <input type="text" name="name" placeholder="Enter Your Name" className="input input-bordered" style={{ width: '100%' }} required />
+                            <input type="text" name="name" placeholder="Enter Your Name" className="input input-bordered bg-white text-black" style={{ width: '100%' }} required />
                         </div>
                     </div>
 
@@ -62,23 +62,23 @@ const Admission = () => {
                             <div className="label w-full text-xl">
                                 Subject:
                             </div>
-                            <input type="text" name="subject" placeholder="Subject" className="input input-bordered" style={{ width: '100%' }} required />
+                            <input type="text" name="subject" placeholder="Subject" className="input input-bordered bg-white text-black" style={{ width: '100%' }} required />
                         </div>
 
                         {/* Email */}
                         <div className="form-control">
                             <label className="label ">
-                                <span className="label-text text-xl">Your Email:</span>
+                                <span className="label-text text-xl text-black">Your Email:</span>
                             </label>
-                            <input type="text" name="email" placeholder=". . . . . . . .com" className="input input-bordered" style={{ width: '100%' }} required />
+                            <input type="text" name="email" placeholder=". . . . . . . .com" className="input input-bordered bg-white text-black" style={{ width: '100%' }} required />
                         </div>
 
                         {/* Phone */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-xl">Phone Number:</span>
+                                <span className="label-text text-xl text-black">Phone Number:</span>
                             </label>
-                            <input type="tel" name="phone" placeholder="+880 . . . . . . . . . ." className="input input-bordered" maxLength="15" style={{ width: '100%' }} required />
+                            <input type="tel" name="phone" placeholder="+880 . . . . . . . . . ." className="input input-bordered bg-white text-black" maxLength="15" style={{ width: '100%' }} required />
                         </div>
                     </div>
 
@@ -87,10 +87,10 @@ const Admission = () => {
                     <div className="lg:flex justify-between mt-4">
                         {/* Address */}
                         <div className="form-control flex">
-                            <div className="label w-full text-xl">
+                            <div className="label w-full text-xl text-black">
                                 Address:
                             </div>
-                            <input type="text" name="address" placeholder="Dhaka, Bangladesh" className="input input-bordered" required style={{ width: '100%' }} />
+                            <input type="text" name="address" placeholder="Dhaka, Bangladesh" className="input input-bordered bg-white text-black" required style={{ width: '100%' }} />
                         </div>
 
                         {/* Date of birth */}
@@ -98,7 +98,7 @@ const Admission = () => {
                             <div className="label w-full text-xl">
                                 Date of Birth:
                             </div>
-                            <input type="date" name="date" placeholder="Date" className="input input-bordered" style={{ width: '100%' }} required />
+                            <input type="date" name="date" placeholder="Date" className="input input-bordered bg-white text-black" style={{ width: '100%' }} required />
                         </div>
 
                         {/* image */}
@@ -106,7 +106,7 @@ const Admission = () => {
                             <div className="label w-full text-xl">
                                 Image:
                             </div>
-                            <input type="file" name="image" placeholder="Dhaka, Bangladesh" className="input input-bordered" pattern="([^\s]+(\.(?i)(jpg|png|gif|bmp))$)" required style={{ width: '100%' }} />
+                            <input type="file" name="image" placeholder="Dhaka, Bangladesh" className="input input-bordered bg-white text-black" pattern="([^\s]+(\.(?i)(jpg|png|gif|bmp))$)" required style={{ width: '100%' }} />
                         </div>
                     </div>
 
