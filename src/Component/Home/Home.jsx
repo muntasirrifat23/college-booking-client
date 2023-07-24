@@ -10,11 +10,13 @@ import college5 from '../../../public/College/c5.jpeg'
 import college6 from '../../../public/College/c6.jpeg'
 import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
+import Rating from "react-rating";
+import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Home = () => {
     const[popular, setPopular] = useState();
     useEffect(()=>{
-        fetch('/college.json')
+        fetch('http://localhost:5000/college')
         .then(res=>res.json())
         .then(data=>{
             const populars = data.filter(item=>
@@ -114,7 +116,15 @@ const Home = () => {
                                     </figure>
                                     <div className="card-body font-semibold">
                                         <h2 className="card-title font-bold text-2xl">Name: {data.name}</h2>
-                                        <p>Rating: {data.rating}</p>
+                                        <div className="flex ">
+                                            <div><span className="font-bold">Rating :</span> {data.rating}</div>
+                                            <Rating className="text-red-800 ml-2" placeholderRating={data.rating}
+                                                readonly
+                                                emptySymbol={<FaRegStar />}
+                                                placeholderSymbol={<FaStar />}
+                                                fullSymbol={<FaStar />}>
+                                            </Rating>
+                                        </div>
                                         <p>Admission Date: {data.admission}</p>
                                         <div className="card-actions">
                                         </div>
@@ -125,7 +135,7 @@ const Home = () => {
 
                     ))
                 ) : (
-                    <p>No popular instructors found.</p>
+                    <p>No popular college found.</p>
                 )}
             </div>
 
