@@ -14,17 +14,26 @@ import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Home = () => {
-    const[popular, setPopular] = useState();
-    useEffect(()=>{
+    const [popular, setPopular] = useState();
+    useEffect(() => {
         fetch('http://localhost:5000/college')
-        .then(res=>res.json())
-        .then(data=>{
-            const populars = data.filter(item=>
-                item.category==='popular');
+            .then(res => res.json())
+            .then(data => {
+                const populars = data.filter(item =>
+                    item.category === 'popular');
                 setPopular(populars);
 
-        })
-    },[])
+            })
+    }, [])
+
+    const [gpa, setGpa] = useState();
+    useEffect(() => {
+        fetch('http://localhost:5000/gpa')
+            .then(res => res.json())
+            .then(dta => { setGpa(dta) })
+    }, [])
+
+
     return (
         <div className="mt-32 text-black bg-white">
             <Helmet>
@@ -103,42 +112,65 @@ const Home = () => {
 
             {/* Popular Home */}
             <div className="text-center mt-12">
-            <h1 className="font-bold text-4xl">Popular College</h1>
+                <h1 className="font-bold text-4xl">Popular College</h1>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex justify-center mb-20 items-center mt-8'>
-                {popular && popular.length > 0 ? (
-                    popular.map(data => (
-                        <>
-                            <div className="flex justify-center  ">
-                                <div className="card w-96 shadow-xl text-black bg-lime-100">
-                                    <figure className="px-10 pt-10">
-                                        <img src={data.image} alt="Shoes" className="rounded-xl" />
-                                    </figure>
-                                    <div className="card-body font-semibold">
-                                        <h2 className="card-title font-bold text-2xl">Name: {data.name}</h2>
-                                        <div className="flex ">
-                                            <div><span className="font-bold">Rating :</span> {data.rating}</div>
-                                            <Rating className="text-red-800 ml-2" placeholderRating={data.rating}
-                                                readonly
-                                                emptySymbol={<FaRegStar />}
-                                                placeholderSymbol={<FaStar />}
-                                                fullSymbol={<FaStar />}>
-                                            </Rating>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex justify-center mb-20 items-center mt-8'>
+                    {popular && popular.length > 0 ? (
+                        popular.map(data => (
+                            <>
+                                <div className="flex justify-center  ">
+                                    <div className="card w-96 shadow-xl text-black bg-lime-100">
+                                        <figure className="px-10 pt-10" style={{ width: '300px', height: '200px' }}>
+                                            <img src={data.image} alt="Shoes" className="rounded-xl" style={{ width: '100%', height: '100%' }} />
+                                        </figure>
+
+                                        <div className="card-body font-semibold">
+                                            <h2 className="card-title font-bold text-2xl">Name: {data.name}</h2>
+                                            <div className="flex ">
+                                                <div><span className="font-bold">Rating :</span> {data.rating}</div>
+                                                <Rating className="text-red-800 ml-2" placeholderRating={data.rating}
+                                                    readonly
+                                                    emptySymbol={<FaRegStar />}
+                                                    placeholderSymbol={<FaStar />}
+                                                    fullSymbol={<FaStar />}>
+                                                </Rating>
+                                            </div>
+                                            <p> <span className="font-bold">Admission Date:</span> {data.admission}</p>
                                         </div>
-                                        <p>Admission Date: {data.admission}</p>
-                                        <div className="card-actions">
-                                        </div>
+
                                     </div>
                                 </div>
-                            </div>
-                        </>
+                            </>
 
-                    ))
-                ) : (
-                    <p>No popular college found.</p>
-                )}
+                        ))
+                    ) : (
+                        <p>No popular college found.</p>
+                    )}
+                </div>
             </div>
 
+            {/* Student of GPA 5 */}
+            <div className="text-center mt-12">
+                <h1 className="font-bold text-4xl">Students of GPA 5</h1>
+
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 flex justify-center mb-20 items-center mt-8 lg:ml-4 m-6'>
+                    {gpa && gpa.length > 0 ? (
+                        gpa.map(success => (
+                            <>
+                            <div className="flex justify-center">
+                            <div className="card bg-base-100 shadow-xl">
+                            <figure style={{ width: '300px', height: '200px' }}>
+                                    <img src={success.image} alt="gpa" className="rounded-xl" style={{ width: '100%', height: '100%' }} />
+                                    </figure>
+                                </div>
+                            </div>    
+                            </>
+
+                        ))
+                    ) : (
+                        <p>No popular college found.</p>
+                    )}
+                </div>
             </div>
 
 
